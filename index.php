@@ -109,7 +109,9 @@ class Category {
 $dogs = new Category(1, "CANI", "Tutte le informazioni sui cani");
 $cats = new Category(2, "GATTI", "Tutte le informazioni sui gatti");
 
-$product = new Product(1, "Gatto Siamese", "Un bellissimo gatto di razza Siamese", 15.99, "Gatti", "gatto_siamese.jpg");
+$product1 = new Product(1, "Pastore Tedesco", "Un cane di razza Pastore Tedesco", 20.99, $dogs);
+$product2 = new Product(2, "Siamese", "Un gatto di razza Siamese", 15.99, $cats);
+
 
 echo "ID: " . $product->getID() . "<br>";
 echo "Nome: " . $product->getName() . "<br>";
