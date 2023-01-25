@@ -8,13 +8,14 @@ class Product {
     private $category;
     private $image;
     
-    public function __construct($id, $name, $description, $price, $category, $image) {
+    public function __construct($id, $name, $description, $price, $category, $image, $expirationDate) {
         $this->setID($id);
         $this->setName($name);
         $this->setDescription($description);
         $this->setPrice($price);
         $this->setCategory($category);
         $this->setImage($image);
+        $this->setExpirationDate($expirationDate);
     }
     
     public function getID() {
@@ -69,6 +70,14 @@ class Product {
         $this->image = $image;
     }
 
+    public function getExpirationDate() {
+        return $this->expirationDate;
+    }
+
+    public function setExpirationDate($expirationDate) {
+        $this->expirationDate = $expirationDate;
+    }
+
     public function getData() {
         return 
         "ID: " . $this->getID() . "<br>"
@@ -76,7 +85,8 @@ class Product {
         ."Descrizione: " . $this->getDescription() . "<br>"
         ."Prezzo: " . $this->getPrice() . "<br>"
         ."Categoria: " . $this->getCategory()->getName() . "<br>"
-        ."Tipologia: " . $this->getCategory()->getTypeName() . "<br>";
+        ."Tipologia: " . $this->getCategory()->getTypeName() . "<br>"
+        ."Scadenza: " . $this->getExpirationDate() . "<br>";
     }
 }
 
@@ -122,6 +132,7 @@ class Type extends Category {
     public function __construct($id, $name, $description, $typeName) {
         parent::__construct($id, $name, $description);
         $this->setTypeName($typeName);
+
     }
 
     public function getTypeName() {
@@ -131,6 +142,8 @@ class Type extends Category {
     public function setTypeName($typeName) {
         $this->typeName = $typeName;
     }
+
+
     public function getData(){
         return
         "ID: " . $this->getID() . "<br>"
@@ -147,12 +160,12 @@ $foodDogs = new Type(4, "CANI", "Tutte le informazioni sui cani", "Cibo");
 $bedCats = new Type(5, "GATTI", "Tutte le informazioni sui gatti", "Cuccia");
 $bedDogs = new Type(6, "CANI", "Tutte le informazioni sui cani", "Cuccia");
 
-$palla = new Product(1, "Palla di gomma", "Una palla di gomma rimbalzante", 20.99, $gamesDogs, "palla.jpg") ;
-$topo = new Product(2, "Topo Giocattolo", "Un topo finto", 10.99, $gamesCats, "topo.jpg") ;
-$crocchetteCane = new Product(3, "Crocchette per cani", "Crocchette di media grandezza", 30.99, $foodDogs, "crocchette.jpg") ;
-$latteGatto = new Product(4, "Latte per gatti", "Latte per gatti appena nati", 4.99, $foodCats, "latte.jpg") ;
-$cucciaCane = new Product(5, "Cuccia per cane", "Cuccia per cane taglia grande", 50.99, $bedDogs, "cucciaXL.jpg") ;
-$cucciaGatto = new Product(6, "Cuccia per gatti", "Cuccia per gatti appena nati", 13.99, $bedCats, "cucciaS.jpg") ;
+$palla = new Product(1, "Palla di gomma", "Una palla di gomma rimbalzante", 20.99, $gamesDogs, "palla.jpg",null) ;
+$topo = new Product(2, "Topo Giocattolo", "Un topo finto", 10.99, $gamesCats, "topo.jpg",null) ;
+$crocchetteCane = new Product(3, "Crocchette per cani", "Crocchette di media grandezza", 30.99, $foodDogs, "crocchette.jpg","24/12/2022") ;
+$latteGatto = new Product(4, "Latte per gatti", "Latte per gatti appena nati", 4.99, $foodCats, "latte.jpg","24/01/2022") ;
+$cucciaCane = new Product(5, "Cuccia per cane", "Cuccia per cane taglia grande", 50.99, $bedDogs, "cucciaXL.jpg", null) ;
+$cucciaGatto = new Product(6, "Cuccia per gatti", "Cuccia per gatti appena nati", 13.99, $bedCats, "cucciaS.jpg", null) ;
 
 
 echo $palla->getData();
