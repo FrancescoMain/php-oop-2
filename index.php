@@ -33,7 +33,7 @@ class Product {
         if (strlen($name) <= 10) {
             $this->name = $name;
         } else {
-            throw new Exception("Il nome del prodotto non può superare i 10 caratteri.");
+            return;
         }
     }
     
@@ -69,3 +69,7 @@ class Product {
         $this->image = $image;
     }
 }
+
+
+
+echo "ok";
