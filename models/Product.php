@@ -70,13 +70,5 @@ class Product {
         $this->image = $image;
     }
 
-    public function getData() {
-        return 
-        "ID: " . $this->getID() . "<br>"
-        ."Nome: " . $this->getName() . "<br>"
-        ."Descrizione: " . $this->getDescription() . "<br>"
-        ."Prezzo: " . $this->getPrice() . "<br>"
-        ."Categoria: " . $this->getCategory()->getName() . "<br>"
-        ."Tipologia: " . $this->getCategory()->getTypeName() . "<br>";
-    }
+
 }
