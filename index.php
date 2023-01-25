@@ -70,6 +70,6 @@ class Product {
     }
 }
 
-
+$product = new Product(1, "Gatto Siamese", "Un bellissimo gatto di razza Siamese", 15.99, "Gatti", "gatto_siamese.jpg");
 
 echo "ok";
