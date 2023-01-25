@@ -72,4 +72,9 @@ class Product {
 
 $product = new Product(1, "Gatto Siamese", "Un bellissimo gatto di razza Siamese", 15.99, "Gatti", "gatto_siamese.jpg");
 
-echo "ok";
+echo "ID: " . $product->getID() . "<br>";
+echo "Nome: " . $product->getName() . "<br>";
+echo "Descrizione: " . $product->getDescription() . "<br>";
+echo "Prezzo: " . $product->getPrice() . "<br>";
+echo "Categoria: " . $product->getCategory() . "<br>";
+echo "Immagine: " . $product->getImage() . "<br>";
