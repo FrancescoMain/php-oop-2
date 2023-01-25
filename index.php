@@ -30,7 +30,11 @@ class Product {
     }
     
     public function setName($name) {
-        $this->name = $name;
+        if (strlen($name) <= 10) {
+            $this->name = $name;
+        } else {
+            throw new Exception("Il nome del prodotto non può superare i 10 caratteri.");
+        }
     }
     
     public function getDescription() {
@@ -65,4 +69,3 @@ class Product {
         $this->image = $image;
     }
 }
-
