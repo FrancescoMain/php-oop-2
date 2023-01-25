@@ -106,6 +106,23 @@ class Category {
     }
 }
 
+class Type extends Category {
+    private $typeName;
+
+    public function __construct($id, $name, $description, $typeName) {
+        parent::__construct($id, $name, $description);
+        $this->setTypeName($typeName);
+    }
+
+    public function getTypeName() {
+        return $this->typeName;
+    }
+
+    public function setTypeName($typeName) {
+        $this->typeName = $typeName;
+    }
+}
+
 $dogs = new Category(1, "CANI", "Tutte le informazioni sui cani");
 $cats = new Category(2, "GATTI", "Tutte le informazioni sui gatti");
 
