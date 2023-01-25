@@ -142,12 +142,29 @@ class Type extends Category {
 
 $gamesCats = new Type(1, "GATTI", "Tutte le informazioni sui gatti", "Giochi");
 $gamesDogs = new Type(2, "CANI", "Tutte le informazioni sui cani", "Giochi");
+$foodCats = new Type(3, "GATTI", "Tutte le informazioni sui gatti", "Cibo");
+$foodDogs = new Type(4, "CANI", "Tutte le informazioni sui cani", "Cibo");
+$bedCats = new Type(5, "GATTI", "Tutte le informazioni sui gatti", "Cuccia");
+$bedDogs = new Type(6, "CANI", "Tutte le informazioni sui cani", "Cuccia");
 
 $palla = new Product(1, "Palla di gomma", "Una palla di gomma rimbalzante", 20.99, $gamesDogs, "palla.jpg") ;
-// $product2 = new Product(2, "Siamese", "Un gatto di razza Siamese", 15.99, $cats, "gatto.jpg");
+$topo = new Product(2, "Topo Giocattolo", "Un topo finto", 10.99, $gamesCats, "topo.jpg") ;
+$crocchetteCane = new Product(3, "Crocchette per cani", "Crocchette di media grandezza", 30.99, $foodDogs, "crocchette.jpg") ;
+$latteGatto = new Product(4, "Latte per gatti", "Latte per gatti appena nati", 4.99, $foodCats, "latte.jpg") ;
+$cucciaCane = new Product(5, "Cuccia per cane", "Cuccia per cane taglia grande", 50.99, $bedDogs, "cucciaXL.jpg") ;
+$cucciaGatto = new Product(6, "Cuccia per gatti", "Cuccia per gatti appena nati", 13.99, $bedCats, "cucciaS.jpg") ;
 
-// echo "ID: " . $product2->getID() . "<br>";
-// echo "Nome: " . $product2->getName() . "<br>";
-// echo "Descrizione: " . $product2->getDescription() . "<br>";
-// echo "Prezzo: " . $product2->getPrice() . "<br>";
-// echo "Categoria: " . $product2->getCategory()->getName() . "<br>";
+
+echo $palla->getData();
+echo "<br> <br>";
+echo $topo->getData();
+echo "<br> <br>";
+echo $crocchetteCane->getData();
+echo "<br> <br>";
+echo $latteGatto->getData();
+echo "<br> <br>";
+echo $cucciaCane->getData();
+echo "<br> <br>";
+echo $cucciaGatto->getData();
+
+
