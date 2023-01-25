@@ -30,7 +30,7 @@ class Product {
     }
     
     public function setName($name) {
-        if (strlen($name) <= 10) {
+        if (strlen($name) <= 20) {
             $this->name = $name;
         } else {
             return;
@@ -109,13 +109,17 @@ class Category {
 $dogs = new Category(1, "CANI", "Tutte le informazioni sui cani");
 $cats = new Category(2, "GATTI", "Tutte le informazioni sui gatti");
 
-$product1 = new Product(1, "Pastore Tedesco", "Un cane di razza Pastore Tedesco", 20.99, $dogs);
-$product2 = new Product(2, "Siamese", "Un gatto di razza Siamese", 15.99, $cats);
+$product1 = new Product(1, "Pastore Tedesco", "Un cane di razza Pastore Tedesco", 20.99, $dogs, "cane.jpg") ;
+$product2 = new Product(2, "Siamese", "Un gatto di razza Siamese", 15.99, $cats, "gatto.jpg");
 
+echo "ID: " . $product1->getID() . "<br>";
+echo "Nome: " . $product1->getName() . "<br>";
+echo "Descrizione: " . $product1->getDescription() . "<br>";
+echo "Prezzo: " . $product1->getPrice() . "<br>";
+echo "Categoria: " . $product1->getCategory()->getName() . "<br>";
 
-echo "ID: " . $product->getID() . "<br>";
-echo "Nome: " . $product->getName() . "<br>";
-echo "Descrizione: " . $product->getDescription() . "<br>";
-echo "Prezzo: " . $product->getPrice() . "<br>";
-echo "Categoria: " . $product->getCategory() . "<br>";
-echo "Immagine: " . $product->getImage() . "<br>";
+echo "ID: " . $product2->getID() . "<br>";
+echo "Nome: " . $product2->getName() . "<br>";
+echo "Descrizione: " . $product2->getDescription() . "<br>";
+echo "Prezzo: " . $product2->getPrice() . "<br>";
+echo "Categoria: " . $product2->getCategory()->getName() . "<br>";
