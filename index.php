@@ -131,6 +131,13 @@ class Type extends Category {
     public function setTypeName($typeName) {
         $this->typeName = $typeName;
     }
+    public function getData(){
+        return
+        "ID: " . $this->getID() . "<br>"
+        ."Nome: " . $this->getName() . "<br>"
+        ."Descrizione: " . $this->getDescription() . "<br>"
+        ."Tipologia: " . $this->getTypeName() . "<br>";
+    }
 }
 
 $gamesCats = new Type(1, "GATTI", "Tutte le informazioni sui gatti", "Giochi");
@@ -138,8 +145,6 @@ $gamesDogs = new Type(2, "CANI", "Tutte le informazioni sui cani", "Giochi");
 
 $palla = new Product(1, "Palla di gomma", "Una palla di gomma rimbalzante", 20.99, $gamesDogs, "palla.jpg") ;
 // $product2 = new Product(2, "Siamese", "Un gatto di razza Siamese", 15.99, $cats, "gatto.jpg");
-
-echo $palla->getData();
 
 // echo "ID: " . $product2->getID() . "<br>";
 // echo "Nome: " . $product2->getName() . "<br>";
