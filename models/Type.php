@@ -6,7 +6,7 @@ class Type extends Product {
     public function __construct($id, $name, $description, $price, $category, $image, $typeName, $expirationDate) {
         parent::__construct($id, $name, $description, $price, $category, $image);
         $this->setTypeName($typeName);
-
+        $this->setExpirationDate($expirationDate);
     }
 
     public function getTypeName() {
