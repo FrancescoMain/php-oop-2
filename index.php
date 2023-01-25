@@ -68,6 +68,16 @@ class Product {
     public function setImage($image) {
         $this->image = $image;
     }
+
+    public function getData() {
+        return 
+        "ID: " . $this->getID() . "<br>"
+        ."Nome: " . $this->getName() . "<br>"
+        ."Descrizione: " . $this->getDescription() . "<br>"
+        ."Prezzo: " . $this->getPrice() . "<br>"
+        ."Categoria: " . $this->getCategory()->getName() . "<br>"
+        ."Tipologia: " . $this->getCategory()->getTypeName() . "<br>";
+    }
 }
 
 class Category {
@@ -129,12 +139,7 @@ $gamesDogs = new Type(2, "CANI", "Tutte le informazioni sui cani", "Giochi");
 $palla = new Product(1, "Palla di gomma", "Una palla di gomma rimbalzante", 20.99, $gamesDogs, "palla.jpg") ;
 // $product2 = new Product(2, "Siamese", "Un gatto di razza Siamese", 15.99, $cats, "gatto.jpg");
 
-echo "ID: " . $palla->getID() . "<br>";
-echo "Nome: " . $palla->getName() . "<br>";
-echo "Descrizione: " . $palla->getDescription() . "<br>";
-echo "Prezzo: " . $palla->getPrice() . "<br>";
-echo "Categoria: " . $palla->getCategory()->getName() . "<br>";
-echo "Tipologia: " . $palla->getCategory()->getTypeName() . "<br>";
+echo $palla->getData();
 
 // echo "ID: " . $product2->getID() . "<br>";
 // echo "Nome: " . $product2->getName() . "<br>";
